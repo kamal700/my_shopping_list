@@ -11,9 +11,11 @@ export default class App extends Component {
   }
 
   componentDidMount(){
-    this.setState({
-      list:JSON.parse(localStorage.getItem('items'))
-    })
+    if(localStorage.getItem('items')){
+      this.setState({
+        list:JSON.parse(localStorage.getItem('items'))
+      })
+    }
   }
 
   // Add new items

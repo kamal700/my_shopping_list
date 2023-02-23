@@ -17,7 +17,7 @@
   bottom: 0;
 }
 .list{
-  width: 55vw;
+  width: 70vw;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -34,13 +34,16 @@
   flex-direction: row;
   justify-content: start;
   align-items: center;
-  margin:  3px;
+  margin:  3px; 
 }
 .itemName{
  word-wrap: break-word;
+ width: 40%;
+ margin-left: 10px;
 }
 .itemQuantity{
   word-wrap: break-word;
+  width: 40%;
 }
 hr{
   margin: 3px;

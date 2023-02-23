@@ -8,14 +8,16 @@ export default class List  extends Component{
     return (
       <ul className='shadow list'>
         <li className='listItem'>
-          <div className='itemName col-5 ms-2'><b>Items</b></div>
-          <div className='itemQuantity col-4'><b>Quantity</b></div>
+          <div className='itemName col-5 ms-2 me-5'><b>Items</b></div>
+          <div className='itemQuantity col-4 mx-4'><b>Quantity</b></div>
         </li>
-      <hr/>  
+        
           {this.props.listitems.map((item,i) => {
-            return <li className='listItem ' id={'listItem'+i  } key={i}>
-              <div className='itemName col-5 ms-2'  id={'itemName'+i  }>{item.name}</div>
-              <div className='itemQuantity col-4' id={'itemQuantity' + i}>{item.quantity}</div>
+            return <>
+              <hr/>
+              <li className='col-12  listItem ' id={'listItem'+i  } key={i}>
+              <div className='itemName col-6 ms-2'  id={'itemName'+i  }>{item.name}</div>
+              <div className='itemQuantity col-2 mx-3' id={'itemQuantity' + i}>{item.quantity}</div>
               <div className='col-3 d-flex flex-row justify-content-end'>
                   <button className='btn  del me-2' onClick={()=>{this.props.deleteItem(i)}}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-trash3-fill" viewBox="0 0 16 16">
@@ -23,7 +25,10 @@ export default class List  extends Component{
                   </svg>
                   </button>
               </div>
+              
             </li> 
+            
+            </>
           })}
           
       </ul>

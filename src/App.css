@@ -38,12 +38,12 @@
 }
 .itemName{
  word-wrap: break-word;
- width: 40%;
- margin-left: 10px;
+ width: 30vw;
+ padding-left:10px
 }
 .itemQuantity{
   word-wrap: break-word;
-  width: 40%;
+  width: 29vw;
 }
 hr{
   margin: 3px;
@@ -54,4 +54,7 @@ hr{
 .gap{
   height: 14px;
   background: rgb(229, 240, 250);
+}
+.del{
+  margin: auto;
 }

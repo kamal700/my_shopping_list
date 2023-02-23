@@ -11,9 +11,9 @@ export default class App extends Component {
   }
 
   componentDidMount(){
-    if(localStorage.getItem('items')){
+    if(sessionStorage.getItem('items')){
       this.setState({
-        list:JSON.parse(localStorage.getItem('items'))
+        list:JSON.parse(sessionStorage.getItem('items'))
       })
     }
   }
@@ -52,7 +52,7 @@ export default class App extends Component {
     })
     form.reset()
 
-    localStorage.setItem('items',JSON.stringify(newItems))
+    sessionStorage.setItem('items',JSON.stringify(newItems))
     
   }
 
@@ -63,7 +63,7 @@ export default class App extends Component {
     items.splice(i,1)
     console.log(i);
     this.setState(items)
-    localStorage.setItem('items',JSON.stringify(items))
+    sessionStorage.setItem('items',JSON.stringify(items))
   }
 
   render() {

@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
 
 export default class form extends Component {
-  state={
-    noOfFields:1,
-  }
-
+ 
   render() {
     return (
       <div className='text-center m-3'>
-        <form id='Additems' >
+        <form id='form' >
             <div className='d-flex flex-row justify-content-center align-items-end'>
                         <div className='col-3 mx-1 d-flex flex-column justify-content-start align-items-start'>
                             <label htmlFor='itemNameInp'>Name</label>

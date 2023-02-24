@@ -21,15 +21,15 @@ export default class App extends Component {
   // Add new items
    additems = ()=>{
 
-    const form = document.getElementById('Additems');
+    const form = document.getElementById('form');
     
     const formData = new FormData(form);
     var newItems = this.state.list
     var errormsg = document.getElementById('errormsg')
     var obj = {}
     form.addEventListener('submit',(e)=>{
-      e.preventDefault()
-    })
+       e.preventDefault()
+     })
     for (const [key, value] of formData) {
       if(value === ''){
         errormsg.innerHTML = '** Please fill all fields'
@@ -47,12 +47,13 @@ export default class App extends Component {
       }
     }
     errormsg.innerHTML = ''
-    this.setState({
-      items:newItems
+    this.setState(()=>{
+      return {list:newItems}
     })
-    form.reset()
+    console.log(this.state)
+     form.reset()
 
-    sessionStorage.setItem('items',JSON.stringify(newItems))
+    sessionStorage.setItem('items',JSON.stringify(newItems)) 
     
   }
 
@@ -72,7 +73,7 @@ export default class App extends Component {
         <div id='page'>
           <Navbar />
           <Form additems = {this.additems}/>
-          <List listitems={this.state.list} deleteItem = {this.deleteItem} editItem={this.editItem}/>
+          <List listitems={this.state.list} deleteItem = {this.deleteItem} />
         </div>
         <div className='gap'></div>
         <Footer />
